@@ -33,7 +33,7 @@ items = os.listdir(mypath)
 fileList = [name for name in items if name.endswith(".org")]
 
 def completer(text, state):
-    options = [x for x in fileList if True if x.find(text) != -1 else False]
+    options = [x for x in fileList if (True if x.find(text) != -1 else False)]
     try:
         return options[state]
     except IndexError:
@@ -42,7 +42,7 @@ def completer(text, state):
 readline.set_completer(completer)
 readline.parse_and_bind("tab: complete")
 
-print( "search files in "+ mypath + " (tab autocomplete)")
+print("search files in "+ mypath + " (tab autocomplete)")
 FileName = input("> ")
 
 if (not os.path.exists(mypath+FileName)):
