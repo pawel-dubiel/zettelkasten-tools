@@ -53,7 +53,7 @@ newName = input( "rename "+ FileName +" to: ")
 
 readline.set_completer()
 
-with open(mypath+FileName, 'r') as original: content    = original.read()
+with open(mypath+FileName, 'r') as original: content = original.read()
 
 oldTitle = ""
 if content.startswith("#+TITLE:"): 
@@ -62,8 +62,8 @@ if content.startswith("#+TITLE:"):
 newTitle = input("old title: " + oldTitle + " provide a new Title (or press enter for no change): ")
 process = input ("rename " + FileName + " to " + newName + " with Title: " + newTitle + "(Y) for yes ")
 
-if process != "Y":
-    print ("abort")
+if process not in ["Y", "y"]:
+    print ("aborted")
     sys.exit()
 
 if os.path.exists(mypath+newName):
