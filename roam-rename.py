@@ -45,9 +45,9 @@ readline.parse_and_bind("tab: complete")
 print("search files in "+ mypath + " (tab autocomplete)")
 FileName = input("> ")
 
-if (not os.path.exists(mypath+FileName)):
-        print("file not exists")
-        sys.exit()
+if not os.path.exists(mypath+FileName):
+    print("file not exists")
+    sys.exit()
 
 newName = input( "rename "+ FileName +" to: ")
 
@@ -57,7 +57,7 @@ with open(mypath+FileName, 'r') as original: content    = original.read()
 
 oldTitle = ""
 if content.startswith("#+TITLE:"): 
-        oldTitle=content.split("\n")[0]
+    oldTitle=content.split("\n")[0]
 
 newTitle = input("old title: " + oldTitle + " provide a new Title (or press enter for no change): ")
 process = input ("rename " + FileName + " to " + newName + " with Title: " + newTitle + "(Y) for yes ")
