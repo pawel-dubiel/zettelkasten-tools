@@ -15,8 +15,8 @@ import time
 from dotenv import load_dotenv
 
 load_dotenv()
-NOTES_BACKUP_PATH = os.getenv("NOTES_BACKUP_PATH");
-NOTES_PATH = os.getenv("NOTES_PATH");
+NOTES_BACKUP_PATH = os.getenv("NOTES_BACKUP_PATH")
+NOTES_PATH = os.getenv("NOTES_PATH")
 
 if not NOTES_BACKUP_PATH or not os.path.exists(NOTES_BACKUP_PATH):
   print("Missing env NOTES_BACKUP_PATH or not readable")  
